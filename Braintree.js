@@ -1,6 +1,8 @@
-
-export default function BraintreeUI(){
-    return (
-    <h1>Braintree UI!</h1>
-    );
-};
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
+exports.default = Braintree;
+function Braintree() {
+    return (<>
+    <h1>Braintree Says Hi!</h1>
+    </>);
+}
