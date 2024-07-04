@@ -98,7 +98,7 @@ const BraintreeUI = () => {
 
     return (
         <div>
-	    <button class="btn-text btn-text-secondary margin-right-15" id="braintreeInitializer" data-test-selector="btnPayAndSubmit" onclick="InitializeBraintree()"><span>Initialize Braintree</span></button>
+	    <button class="btn-text btn-text-secondary margin-right-15" id="braintreeInitializer" data-test-selector="btnPayAndSubmit" onclick={()=> InitializeBraintree()}><span>Initialize Braintree</span></button>
         <form id="payment-form" data-test-selector="formBrainTreePayment">
         <section>
             <div class="bt-drop-in-wrapper">
