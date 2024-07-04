@@ -1,20 +1,21 @@
-const useScript = url => {
-    React.useEffect(() => {
-        const script = document.createElement('script');
-
-        script.src = url;
-        script.async = true;
-
-        document.body.appendChild(script);
-
-        return () => {
-            document.body.removeChild(script);
-        }
-    }, [url]);
-};
 
 
 const BraintreeUI = () => {
+    const useScript = url => {
+        React.useEffect(() => {
+            const script = document.createElement('script');
+    
+            script.src = url;
+            script.async = true;
+    
+            document.body.appendChild(script);
+    
+            return () => {
+                document.body.removeChild(script);
+            }
+        }, [url]);
+    };
+    
     const [scriptLoaded, setScriptLoaded] = React.useState(false);
 
     React.useEffect(()=>{
