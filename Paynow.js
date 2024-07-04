@@ -1,10 +1,9 @@
-import { useEffect, useState } from "react";
 
         // Define a simple React component
         const App = () => {
-          const [color, setColor] = useState("");
+          const [color, setColor] =React.useState()
           
-          useEffect(()=>{
+          React.useEffect(()=>{
             setColor("blue");
 
           },[]
