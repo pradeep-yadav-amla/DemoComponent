@@ -28,7 +28,7 @@ const BraintreeUI = () => {
     // },[]);
     
     React.useEffect(()=>{
-        if(scriptLoaded){
+        if(true){
             InitializeBraintree(); 
         }
     },[]);
