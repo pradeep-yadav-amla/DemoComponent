@@ -1,31 +1,31 @@
 
 
 const BraintreeUI = () => {
-    const useScript = url => {
-        React.useEffect(() => {
-            const script = document.createElement('script');
+    // const useScript = url => {
+    //     React.useEffect(() => {
+    //         const script = document.createElement('script');
     
-            script.src = url;
-            script.async = true;
+    //         script.src = url;
+    //         script.async = true;
     
-            document.body.appendChild(script);
+    //         document.body.appendChild(script);
     
-            return () => {
-                document.body.removeChild(script);
-            }
-        }, [url]);
-    };
+    //         return () => {
+    //             document.body.removeChild(script);
+    //         }
+    //     }, [url]);
+    // };
     
-    const [scriptLoaded, setScriptLoaded] = React.useState(false);
+    // const [scriptLoaded, setScriptLoaded] = React.useState(false);
 
-    React.useEffect(()=>{
-         useScript("https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js");
-         useScript("https://unpkg.com/react@18/umd/react.development.js");
-         useScript("https://unpkg.com/react-dom@18/umd/react-dom.development.js");
-         useScript("https://unpkg.com/@babel/standalone/babel.min.js");
-         useScript("https://js.braintreegateway.com/web/dropin/1.33.2/js/dropin.min.js");
-         setScriptLoaded(true);
-    },[]);
+    // React.useEffect(()=>{
+    //      useScript("https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js");
+    //      useScript("https://unpkg.com/react@18/umd/react.development.js");
+    //      useScript("https://unpkg.com/react-dom@18/umd/react-dom.development.js");
+    //      useScript("https://unpkg.com/@babel/standalone/babel.min.js");
+    //      useScript("https://js.braintreegateway.com/web/dropin/1.33.2/js/dropin.min.js");
+    //      setScriptLoaded(true);
+    // },[]);
     
     React.useEffect(()=>{
         if(scriptLoaded){
@@ -82,6 +82,8 @@ const BraintreeUI = () => {
                         isVault = true;
                     }
                 instance.requestPaymentMethod(function (err, payload) {
+                    callResponse(instance);
+
                     if (err) {
                         console.log('Error', err);
                         return;
@@ -91,6 +93,7 @@ const BraintreeUI = () => {
                     document.querySelector('#nonce').value = payload.nonce;
                     document.querySelector('#details').value = payload.details;
                     alert(payload);
+                    
     
                 });
             });
