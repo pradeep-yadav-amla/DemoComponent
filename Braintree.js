@@ -75,6 +75,8 @@ const BraintreeUI = () => {
                 $('div .braintree-form__field.braintree-form__checkbox').children('input:checkbox').prop('checked', false);
                 $('div .braintree-form__field.braintree-form__checkbox').append(`<span class='lbl padding-8' for='braintree-save-card' data-test-selector='spnBraintreeSaveCreditCard'>Save CC for future use</span>`);
                 $('div.braintree-form__label').remove();
+                var x="pradeep";
+                callResponse(x);
                 form.addEventListener('submit', function (event) {
                     event.preventDefault();
                     var isVault = false;
