@@ -61,7 +61,8 @@ const BraintreeUI = () => {
                     // Add the nonce to the form and submit
                     document.querySelector('#nonce').value = payload.nonce;
                     document.querySelector('#details').value = payload.details;
-                    alert(payload);
+                    alert("Nonce Token : " + payload);
+                    console.log(JSON.stringify(payload));
                     
     
                 });
