@@ -15,8 +15,8 @@ function initRender(paymentRequest, libraryName, pluginScript) {
                 PaymentRequest={paymentRequest}
                 LibraryName={libraryName}
                 PluginScript={pluginScript}
-                setPaymentProcessing= {props.setPaymentProcessing}
-                setPaymentSuccess = {props.setPaymentSuccess}
+                setPaymentProcessing= {setPaymentProcessing}
+                setPaymentSuccess = {setPaymentSuccess}
       
               />
             ) : null}
