@@ -7,8 +7,7 @@ function initRender() {
 
       return (
         <div>
-          <h1>Counter: {count}</h1>
-          <button onClick={() => setCount(count + 1)}>Increment</button>
+          <h1>Payment UI</h1>
         </div>
       );
     }
