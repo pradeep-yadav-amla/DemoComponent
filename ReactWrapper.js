@@ -1,15 +1,27 @@
-function initRender() {
+function initRender(paymentRequest, libraryName, pluginScript) {
     // Define a React component
     const { useState } = React;
 
     function ReactWrapper() {
         const [paymentSuccess, setPaymentSuccess] = useState(false);
+        const [paymentProcessing, setPaymentProcessing] = useState(false);
 
-      return (
-        <div>
-          <h1>Payment UI</h1>
-        </div>
-      );
+        const PaymentComponent = window.PaymentManager.default;
+
+        return (
+          <div>
+            {PaymentComponent ? (
+              <PaymentComponent
+                PaymentRequest={paymentRequest}
+                LibraryName={libraryName}
+                PluginScript={pluginScript}
+                setPaymentProcessing= {props.setPaymentProcessing}
+                setPaymentSuccess = {props.setPaymentSuccess}
+      
+              />
+            ) : null}
+          </div>
+        )      
     }
 
     // Render the component into the root element
